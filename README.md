@@ -159,9 +159,6 @@ Each of the Regressors is used to used to make the first **25** predictions.
 
 Given the R<sup>2</sup> scores are so close, I'll lean towards simplicity rather than running several base regressors and an ensemble to gain just a **3%** gain in explained behavior/R<sup>2</sup> by choosing to do a **linear regression** going forward.
 
-| ![Linear Regression Performance](images/readme/linear_regression_performance.png) |
-| :-: |
-
 ## Predictions ##
 
 There's a strong correlation between the percent of test takers in a school and the number of offers that that high school received.
@@ -186,7 +183,8 @@ Another approach is to only send test takers that're high performing students, o
 
 All possible performance related predictors (mark and level4) are very strongly correlated with each other (multicolinear). Another way to look at what can predict (successful) performance on the SHSAT is to look at percent of offers by student (PctOffersByStudent) that took the SHSAT to the percent of level-4 students in 7th grade (PctScore4).
 
-![Linear Regressino of High Performing Test Takers](images/readme/linear_reg_high_performing_students.png)
+| ![Linear Regressino of High Performing Test Takers](images/readme/linear_reg_high_performing_students.png) |
+| :-: |
 
 **Top 25 schools that can increase the percent of their students receiving offers**
 
