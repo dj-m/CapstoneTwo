@@ -11,12 +11,12 @@ Performance on the Specialized High School Admissions Test (SHSAT) determines el
 
 Two main data sets will be used:
 
-_2016 School Explorer_
+_2016 School Explorer_ (Explorer)
 
 - This dataset consists of 1272 schools in New York city, and 161 variables, provided via kaggle. Primarily, it’s school descriptors, e.g. grades, race & ethnicity student percentages, high/low performing percentages of students. Data is available as a single csv file.
   - [Kaggle Dataset](https://storage.googleapis.com/kagglesdsdata/datasets%2F33225%2F44131%2F2016%20School%20Explorer.csv?GoogleAccessId=gcp-kaggle-com@kaggle-161607.iam.gserviceaccount.com&Expires=1595273466&Signature=fk6%2BI64ZSKXeenOP24Hsst9gNp2z3gFDGnz1rSXzcrnS874EFfR1VjUPVu0mCoN0bwXxJ7udjKpGlD51QLqiolRTpt9t%2F6ko672nNzd2KU0zJd4xRN8yW4Ouk1XxbCCTN2u6In241T1%2BY1RMpSp5rQgko83zQtwPClQPsl%2BWynlztsHV1aWF2K1J6MUy1SBaXyHvTSXBiMp1G2FvCoVjRVyjkXwV94Xgayi8Zgs3ISjyVUZn3yYzuyarl8NUwSnryWnfCE1debgt5z9AP5aTv7IbUA297hpYAhHZR0NjtKMwoadxypbWbBZ6cUTgI8KT4L4q8LdCgJ6SDJolkJERaQ%3D%3D) (API)
 
-_2017-2018 SHSAT Admissions Test Offers By Sending School_
+_2017-2018 SHSAT Admissions Test Offers By Sending School_ (Offers)
 
 - This dataset consists of the 2017 SHSAT results, published by NYC in 2018. All test takers are north of 28,000, grade 8 students, Test takers and offers received are grouped by school. Data is available as a single csv file from the NYC Open Data portal.
   - [NYC Dataset](https://data.cityofnewyork.us/resource/vsgi-eeb5.csv) (CSV)
@@ -31,7 +31,7 @@ Initially we can assume that those students who perform well on typical standard
 
 As a bit of forecasting, I'll use linear regression models to determine how many admissions offers schools that fit a certain testing/aptitude standard could be getting based on their current testing scores.
 
-## Data Cleaning & Feature Engineering ##
+## Data Cleaning  ##
 
 To determine what factors are related to receiving admissino offers to the specialized high schools, the data feeding into the models need to be not only numeric but free of errors. 
  
@@ -73,11 +73,43 @@ In 2016, the total number of 7th graders in NYC Middle Schools was **69,053**. O
 
 **537** NYC Middle Schools sent at least 6 students to SHSAT for a total of **25,349** 8th graders taking the test. **57** schools send 0-5 8th graders to take the test. **121** NYC Middle Schools saw _at least_ 6 of their students receive offers, for a total of **4,018** 8th graders having received an offer. **473** schools saw 0-5 of their 8th graders receive an offer.
 
-## Exploratory Data Analysis ##
+**Merging Datasets**
 
-Using the assumption that those ethnicities that have the majority of the 4 scores will, in turn, perform well on the aptitude test for the specialized high school, we can see why Black & Latino may receive less admittance offers based on these limited criteria.
+Using the DBN & Location Code I'll merge _Explorer_ data for 7th graders to the _Offers_ information for SHSAT testers. In the process it looks like **2** schools in _Explorer_ didn't have information in the _Offers_ dataset.
 
+## Exploratory Data Analysis & Feature Engineering ##
 
+| ![Score 4 Ethnicity](images/readme/score_4_ethnicity.png) |
+| :-: |
+
+Looking at the assumption that those students/schools that have the majority of the 4 scores will, in turn, perform well on the aptitude test for the specialized high school, we can see that Black & Latinx students may receive less admittance offers based on this limited criteria.
+
+In order to better summarize the schools/students into ranges of test scores, I've added the following features:
+
+- “Percentage of SHSAT takers receiving an offer” (Numbers of SHSAT takers / Number of Offers by school)
+- “The total number of Black/Hispanic students in Grade 8” (Number of 8th graders * Percent Black / Hispanic)
+- “Percentage of students who did the SHSAT” (Number of SHSAT takers / Number of 8th graders)
+- “Average Mark” (the average of Average ELA Proficiency and Average Math Proficiency)
+- “Percent of students with Level 4 ELA in Grade 7 (Grade 7 ELA 4s - All Students / Grade 7 ELA - All Students Tested)
+- “Percent of students with Level 4 Math in Grade 7 (Grade 7 Math 4s - All Students / Grade 7 Math - All Students Tested)
+- “Percent of students with Level 4 in Grade 7” (average of 4 percentages ELA and Math in Grade 7)
+- “Average number of Level 4 students” (Grade 7 ELA 4s - All Students + Grade 7 Math 4s - All Students)/2
+
+**Schools with the highest number of test takers**
+
+What we're seeing in this next plot is that those schools that send the most 8th graders to the SHSAT, have less of their school, percentage-wise, represented by Black or Latino students.
+
+Interestingly, there is a high percentage of Black/Hispanic students (The William W. Niles school **82%**, and The Eugenio Maria De Hostos school **78%**), near the middle of the pack and the lowest, respectively.
+
+![Highest Number of Test Takers](images/readme/highest_number_test_takers.png)
+
+**Schools with the least number of test takers**
+
+_Nearly_ all of the schools with the least number of test takers in 2017 (55) had low average marks (average of AvgELA and AvgMath).
+
+Also, most schools had a high percentage of Black or Hispanic students.
+
+![Least Number of Test Takers](images/readme/least_number_test_takers.png)
 
 ## Project Organization ##
 ------------
