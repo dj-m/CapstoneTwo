@@ -79,10 +79,10 @@ Using the DBN & Location Code I'll merge _Explorer_ data for 7th graders to the 
 
 ## Exploratory Data Analysis & Feature Engineering ##
 
+Looking at the assumption that those students/schools that have the majority of the 4 scores will, in turn, perform well on the aptitude test for the specialized high school, we can see that Black & Latinx students may receive less admittance offers based on this limited criteria.
+
 | ![Score 4 Ethnicity](images/readme/score_4_ethnicity.png) |
 | :-: |
-
-Looking at the assumption that those students/schools that have the majority of the 4 scores will, in turn, perform well on the aptitude test for the specialized high school, we can see that Black & Latinx students may receive less admittance offers based on this limited criteria.
 
 In order to better summarize the schools/students into ranges of test scores, I've added the following features:
 
@@ -97,11 +97,12 @@ In order to better summarize the schools/students into ranges of test scores, I'
 
 **Schools with the highest number of test takers**
 
-What we're seeing in this next plot is that those schools that send the most 8th graders to the SHSAT, have less of their school, percentage-wise, represented by Black or Latino students.
+What we're seeing in this next plot is that those schools that send the most 8th graders to the SHSAT, have less of their school, percentage-wise, represented by Black or Latinx students.
 
-Interestingly, there is a high percentage of Black/Hispanic students (The William W. Niles school **82%**, and The Eugenio Maria De Hostos school **78%**), near the middle of the pack and the lowest, respectively.
+Interestingly, there is a high percentage of Black/Hispanic students (The William W. Niles (**82%**) school , and The Eugenio Maria De Hostos (**78%**) school ), near the middle of the pack and the lowest, respectively.
 
-![Highest Number of Test Takers](images/readme/highest_number_test_takers.png)
+| ![Highest Number of Test Takers](images/readme/highest_number_test_takers.png) |
+| :-: |
 
 **Schools with the least number of test takers**
 
@@ -109,7 +110,53 @@ _Nearly_ all of the schools with the least number of test takers in 2017 (55) ha
 
 Also, most schools had a high percentage of Black or Hispanic students.
 
-![Least Number of Test Takers](images/readme/least_number_test_takers.png)
+| ![Least Number of Test Takers](images/readme/least_number_test_takers.png) |
+| :-: |
+
+**Number of offers by school**
+
+The top 25 schools with the most offers received had lower percentages of Black or Hispanic students (highest percentage is at Frank Sansivieri school with **59%** Black or Hispanic students).
+
+| ![Number of Offers by School](images/readme/number_offers_by_school.png) |
+| :-: |
+
+**Highest percentage of offers for the number of test takers**
+
+Below are the top 20 schools that had the highest percentage of offers for the number of test takers, representing how successful that school was as to the number of students that were admitted to the specialized high school.
+
+The Christa McAuliffe School had the msot success with **82%** of 251 students taking the test getting an offer.
+
+The schools scoring best at the percentage of students actually getting an offer are very low in Black or Latinx student percentages (the exception is the small Columbia Secondary School with **64%** Black/Latinx).
+
+| ![Highest Percent of Offers per Number of Test Takers](images/readme/highest_percent_offers_per_test_taker.png) |
+| :-: |
+
+**Least percentage of offers for the number of test takers**
+
+Of those schools which had _at least_ 6 offers, the 20 schools with least success are shown below.
+
+Two of the largest schools that are predominatly Black/Latinx and sent many students to the test are J.H.S 118 William W. Niles school @ **424** 8th graders (**82%** Black/Latinx) and I.S. 318 Eugenio Maria De Hostos @ **467** 8th graders (**78%** Black/Latinx).
+
+| ![Lowest Percent of Offers per Number of Test Takers](images/readme/least_percent_offers_per_test_taker.png) |
+| :-: |
+
+## Models & Evaluation ##
+
+My intent is to use regression-based models because my label/y is numeric in nature and the interest I have is in how many offers a school ought to expect given the features/independent variables one could supply to the model.
+
+Initially I will determine which regressor algorithm performs best then I will use an ensemble meta-estimator that fits several base regressors, each on the whole dataset then averages the individual predictions to form a final prediction.
+
+Each of the Regressors is used to used to make the first **25** predictions.
+
+| ![Regressor Performance on First 25 Predictions](images/readme/regressor_performance.png) |
+| :-: |
+
+- Gradient Boosting Regressor R<sup>2</sup>: 0.930 
+- Random Forest Regressor R<sup>2</sup>: 0.946 
+- Linear Regression R<sup>2</sup>: 0.930 
+- Voting Regressor R<sup>2</sup>: 0.966
+
+Given the R<sup>2</sup> scores are so close, I'll lean towards simplicity rather than running several base regressors and an ensemble to gain just a **3%** gain in explained behavior/R<sup>2</sup> by choosing to do a **linear regression** going forward.
 
 ## Project Organization ##
 ------------
