@@ -210,8 +210,7 @@ In particular, **P.S. 235 Janice Marie Knight School** & **J.H.S. 118 William W.
   - It would be interesting to see how preparatory tests for the SHSAT relate to the number of offers recevied by schools/students. 
   - Also, looking at any after-school prep programs' impact on the number of offers received, would be interesting.
 
-## Project Organization ##
-------------
+## Project File Structure/Organization ##
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
@@ -258,7 +257,4 @@ In particular, **P.S. 235 Janice Marie Knight School** & **J.H.S. 118 William W.
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
-
---------
-
-<p><small>Project structure based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+- Project structure based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience
