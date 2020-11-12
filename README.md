@@ -2,6 +2,7 @@
 
 # Specialized High School Scholastic Aptitude Test Admission Performance #
 Capstone Two: Predictors of test performance for specialized high school admissions offers.
+- [Jupyter Notebook](https://github.com/dj-m/CapstoneTwo/blob/master/notebooks/CapstoneTwo_PredictingHighSchoolAdmissionsOffers.ipynb)
 
 ## Background ##
 
@@ -200,6 +201,16 @@ The table displays schools that should have received at least 10 Extra Offers ac
 ![Underperforming School Districts](images/readme/underperforming_districts.png)
 
 In particular, **P.S. 235 Janice Marie Knight School** & **J.H.S. 118 William W. Niles** are great candidates that should've seen their students receive more **21** and **11** more offers, respectively, for admission to the specialized high schools. Their high percentage of Black &/or Latinx students would've improved the rate at which those ethnicities receive offers across NYC.
+
+## Future Analyses ##
+
+- An aspect that I wasn't able to explore was using GIS to determine if there are any differences in admissions offers to schools/students based on how close the feeder school is to the specialized high school.
+
+- I was only able to use one year of admissions and test data. It would have been interesting to determine if there're any trends in the data across more than one year of data.
+
+- The data only contained the performance on tests that are administered to students during a typical school year. 
+  - It would be interesting to see how preparatory tests for the SHSAT relate to the number of offers recevied by schools/students. 
+  - Also, looking at any after-school prep programs' impact on the number of offers received, would be interesting.
 
 ## Project Organization ##
 ------------
