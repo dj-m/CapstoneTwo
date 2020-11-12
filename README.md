@@ -257,4 +257,4 @@ In particular, **P.S. 235 Janice Marie Knight School** & **J.H.S. 118 William W.
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
-- Project structure based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience
+- Project structure based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>
