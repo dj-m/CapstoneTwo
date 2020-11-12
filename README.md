@@ -195,7 +195,9 @@ Here I'm making predictions by school regarding the percent of offers per studen
 
 The above table is filtered to exclude schools in eight overperforming districts, detailed below. "Overperforming" means total offers (NumSpecializedOffers) divided by total 8th graders (count_of_students_in_hs_admissions).
 
-The table displays schools that should have received at least 10 Extra Offers according to the model in under and avergely performing districts.
+The table displays schools that should have received at least 10 Extra Offers according to the model in under and average performing districts (listed below).
+
+![Underperforming School Districts](images/readme/underperforming_districts.png)
 
 In particular, **P.S. 235 Janice Marie Knight School** & **J.H.S. 118 William W. Niles** are great candidates that should've seen their students receive more **21** and **11** more offers, respectively, for admission to the specialized high schools. Their high percentage of Black &/or Latinx students would've improved the rate at which those ethnicities receive offers across NYC.
 
