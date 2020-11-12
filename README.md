@@ -31,7 +31,7 @@ Initially we can assume that those students who perform well on typical standard
 
 As a bit of forecasting, I'll use linear regression models to determine how many admissions offers schools that fit a certain testing/aptitude standard could be getting based on their current testing scores.
 
-## Feature Engineering & Data Cleaning ##
+## Data Cleaning & Feature Engineering ##
 
 To determine what factors are related to receiving admissino offers to the specialized high schools, the data feeding into the models need to be not only numeric but free of errors. 
  
@@ -48,7 +48,8 @@ Given the test-takers in the _2017-2018 SHSAT Admissions Test Offers By Sending 
 
 _2016 School Explorer_ has 20 variables with information 7th graders. This data is broken up into two kinds of information, ELA (English Language Arts) & Math. Scoring on these tests top out at 4, with 1 representing the worst score.
  
-![2016 School Explorer data](images/readme/2016_school_explorer_data.png)
+| ![2016 School Explorer data](images/readme/2016_school_explorer_data.png) |
+| :-: |
  
 Therefore, the best students are in the '4s' columns shown above.
 
@@ -64,6 +65,19 @@ Summary of columns:
 - Multiracial students with 4 scores
 - Limited English Proficient students with 4 scores
 - Economically Disadvantaged with 4 scores
+
+In 2016, the total number of 7th graders in NYC Middle Schools was **69,053**. Of those, **8,320** had ELA scores of 4, and **10,888** had Math scores of 4.
+
+| ![2017-2018 SHSAT Admissions Test Offers By Sending School data](images/readme/shsat_offers_by_school.png) |
+| :-: |
+
+**537** NYC Middle Schools sent at least 6 students to SHSAT for a total of **25,349** 8th graders taking the test. **57** schools send 0-5 8th graders to take the test. **121** NYC Middle Schools saw _at least_ 6 of their students receive offers, for a total of **4,018** 8th graders having received an offer. **473** schools saw 0-5 of their 8th graders receive an offer.
+
+## Exploratory Data Analysis ##
+
+Using the assumption that those ethnicities that have the majority of the 4 scores will, in turn, perform well on the aptitude test for the specialized high school, we can see why Black & Latino may receive less admittance offers based on these limited criteria.
+
+
 
 ## Project Organization ##
 ------------
