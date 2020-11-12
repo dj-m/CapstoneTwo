@@ -1,7 +1,10 @@
-CapstoneTwo
+| ![SHSAT Testing](images/readme/cover_photo.png) |
+| :-: |
+
+Specialized High School Admission Test Performance
 ==============================
 
-Predictors of test performance for specialized high school admissions.
+Capstone Two: Predictors of test performance for specialized high school admissions offers.
 
 Project Organization
 ------------
@@ -54,4 +57,4 @@ Project Organization
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+<p><small>Project Structure based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
