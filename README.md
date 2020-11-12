@@ -158,6 +158,47 @@ Each of the Regressors is used to used to make the first **25** predictions.
 
 Given the R<sup>2</sup> scores are so close, I'll lean towards simplicity rather than running several base regressors and an ensemble to gain just a **3%** gain in explained behavior/R<sup>2</sup> by choosing to do a **linear regression** going forward.
 
+| ![Linear Regression Performance](images/readme/linear_regression_performance.png) |
+| :-: |
+
+## Predictions ##
+
+There's a strong correlation between the percent of test takers in a school and the number of offers that that high school received.
+
+One approach to achieving more admissions offers is to send more students to take the SHSAT, based on the average number of level 4 scorers in the school.
+
+| ![Linear Regression of Offers and Scores](images/readme/linear_reg_test_takers_avg_mark.png) |
+| :-: |
+
+The model is based on 530 schools (536 schools with at least 6 SHSAT takers, as SHSAT is unknown for category 0-5 takers. For 6 out of those 536 schools the AvgMark is 0 as a result.
+
+**Top 25 schools that can send more students to the take the test**
+
+Below, are the predictions by school regarding the percent of students that could have taken the SHSAT (PerModelDidSHSAT). The PotentialTakers takes the difference between the PerModelDidSHSAT and PerDidSHSAT (ModAgainstDidSHSAT) multiplied by the total number of 8th grade students in each school (count\_of_students_hs_admissions).
+
+![Schools To Send More Test Takers](images/readme/25_schools_send_test_takers.png)
+
+- The above-referenced schools ought to send more students to take the SHSAT as their average marks may translate into more of their students receiving offers to attend the specialized high schools.
+- Increasing the number of test-takers from schools with higher percentages of Black &/or Latinx test-takers will help address the deep disparity of offers being received by White and Asian students.
+
+Another approach is to only send test takers that're high performing students, or those who are level 4.
+
+All possible performance related predictors (mark and level4) are very strongly correlated with each other (multicolinear). Another way to look at what can predict (successful) performance on the SHSAT is to look at percent of offers by student (PctOffersByStudent) that took the SHSAT to the percent of level-4 students in 7th grade (PctScore4).
+
+![Linear Regressino of High Performing Test Takers](images/readme/linear_reg_high_performing_students.png)
+
+**Top 25 schools that can increase the percent of their students receiving offers**
+
+Here I'm making predictions by school regarding the percent of offers per student according to the model (mod_offers). Real offers (RealOffers) looks at the modeled percent offers (PctModelOffers) multiplied by the number of SHSAT takers. PotentialOffers takes the difference of RealOffers from actual offers (NumSpecializedOffers).
+
+![Schools Send High Performering Test Takers](images/readme/25_schools_high_performers.png)
+
+The above table is filtered to exclude schools in eight overperforming districts, detailed below. "Overperforming" means total offers (NumSpecializedOffers) divided by total 8th graders (count_of_students_in_hs_admissions).
+
+The table displays schools that should have received at least 10 Extra Offers according to the model in under and avergely performing districts.
+
+In particular, **P.S. 235 Janice Marie Knight School** & **J.H.S. 118 William W. Niles** are great candidates that should've seen their students receive more **21** and **11** more offers, respectively, for admission to the specialized high schools. Their high percentage of Black &/or Latinx students would've improved the rate at which those ethnicities receive offers across NYC.
+
 ## Project Organization ##
 ------------
 
