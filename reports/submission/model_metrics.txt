@@ -1,0 +1,55 @@
+Recommendation #1 Model: SHSAT Test Takers
+
+OLS Regression Results                                
+=======================================================================================
+Dep. Variable:            PerDidSHSAT   R-squared (uncentered):                   0.820
+Model:                            OLS   Adj. R-squared (uncentered):              0.820
+Method:                 Least Squares   F-statistic:                              2412.
+Date:                Tue, 27 Oct 2020   Prob (F-statistic):                   3.24e-199
+Time:                        15:11:50   Log-Likelihood:                         -2233.7
+No. Observations:                 530   AIC:                                      4469.
+Df Residuals:                     529   BIC:                                      4474.
+Df Model:                           1                                                  
+Covariance Type:            nonrobust                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+AvgMark       13.1628      0.268     49.114      0.000      12.636      13.689
+==============================================================================
+Omnibus:                       94.880   Durbin-Watson:                   1.647
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              147.944
+Skew:                           1.148   Prob(JB):                     7.49e-33
+Kurtosis:                       4.196   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Recommendation #2 Model: Level 4 Students
+
+OLS Regression Results                                
+=======================================================================================
+Dep. Variable:     PctOffersByStudent   R-squared (uncentered):                   0.914
+Model:                            OLS   Adj. R-squared (uncentered):              0.913
+Method:                 Least Squares   F-statistic:                              1268.
+Date:                Tue, 27 Oct 2020   Prob (F-statistic):                    1.25e-65
+Time:                        20:26:42   Log-Likelihood:                         -443.30
+No. Observations:                 121   AIC:                                      888.6
+Df Residuals:                     120   BIC:                                      891.4
+Df Model:                           1                                                  
+Covariance Type:            nonrobust                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+PctScore4      0.9278      0.026     35.602      0.000       0.876       0.979
+==============================================================================
+Omnibus:                        3.571   Durbin-Watson:                   1.734
+Prob(Omnibus):                  0.168   Jarque-Bera (JB):                3.953
+Skew:                           0.093   Prob(JB):                        0.139
+Kurtosis:                       3.866   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.
