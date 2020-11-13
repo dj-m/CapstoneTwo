@@ -34,7 +34,7 @@ As a bit of forecasting, I'll use linear regression models to determine how many
 
 ## Data Cleaning  ##
 
-To determine what factors are related to receiving admissino offers to the specialized high schools, the data feeding into the models need to be not only numeric but free of errors. 
+To determine what factors are related to receiving admission offers to the specialized high schools, the data feeding into the models need to be not only numeric but free of errors. 
  
 We can see that the _2016 School Explorer_ data set has three columns almost entirely of null values. These can be filled with an appropriate value for the data type of those columns.
  
@@ -80,7 +80,7 @@ Using the DBN & Location Code I'll merge _Explorer_ data for 7th graders to the 
 
 ## Exploratory Data Analysis & Feature Engineering ##
 
-Looking at the assumption that those students/schools that have the majority of the 4 scores will, in turn, perform well on the aptitude test for the specialized high school, we can see that Black & Latinx students may receive less admittance offers based on this limited criteria.
+Looking at the assumption that those students/schools that have the majority of the 4 scores will, in turn, perform well on the aptitude test for the specialized high school, we can see that Black & Latinx students may receive less admittance offers based on this limited criterion.
 
 | ![Score 4 Ethnicity](images/readme/score_4_ethnicity.png) |
 | :-: |
@@ -100,7 +100,7 @@ In order to better summarize the schools/students into ranges of test scores, I'
 
 What we're seeing in this next plot is that those schools that send the most 8th graders to the SHSAT, have less of their school, percentage-wise, represented by Black or Latinx students.
 
-Interestingly, there is a high percentage of Black/Hispanic students (The William W. Niles (**82%**) school , and The Eugenio Maria De Hostos (**78%**) school ), near the middle of the pack and the lowest, respectively.
+Interestingly, there is a high percentage of Black/Hispanic students (The William W. Niles (**82%**) school and The Eugenio Maria De Hostos (**78%**) school), near the middle of the pack and the lowest, respectively.
 
 | ![Highest Number of Test Takers](images/readme/highest_number_test_takers.png) |
 | :-: |
@@ -109,7 +109,7 @@ Interestingly, there is a high percentage of Black/Hispanic students (The Willia
 
 _Nearly_ all of the schools with the least number of test takers in 2017 (55) had low average marks (average of AvgELA and AvgMath).
 
-Also, most schools had a high percentage of Black or Hispanic students.
+Also, most schools had a high percentage of Black or Latinx students.
 
 | ![Least Number of Test Takers](images/readme/least_number_test_takers.png) |
 | :-: |
@@ -125,7 +125,7 @@ The top 25 schools with the most offers received had lower percentages of Black 
 
 Below are the top 20 schools that had the highest percentage of offers for the number of test takers, representing how successful that school was as to the number of students that were admitted to the specialized high school.
 
-The Christa McAuliffe School had the msot success with **82%** of 251 students taking the test getting an offer.
+The Christa McAuliffe School had the most success with **82%** of 251 students taking the test getting an offer.
 
 The schools scoring best at the percentage of students actually getting an offer are very low in Black or Latinx student percentages (the exception is the small Columbia Secondary School with **64%** Black/Latinx).
 
@@ -136,7 +136,7 @@ The schools scoring best at the percentage of students actually getting an offer
 
 Of those schools which had _at least_ 6 offers, the 20 schools with least success are shown below.
 
-Two of the largest schools that are predominatly Black/Latinx and sent many students to the test are J.H.S 118 William W. Niles school @ **424** 8th graders (**82%** Black/Latinx) and I.S. 318 Eugenio Maria De Hostos @ **467** 8th graders (**78%** Black/Latinx).
+Two of the largest schools that are predominantly Black/Latinx and sent many students to the test are J.H.S 118 William W. Niles school @ **424** 8th graders (**82%** Black/Latinx) and I.S. 318 Eugenio Maria De Hostos @ **467** 8th graders (**78%** Black/Latinx).
 
 | ![Lowest Percent of Offers per Number of Test Takers](images/readme/least_percent_offers_per_test_taker.png) |
 | :-: |
@@ -207,7 +207,7 @@ In particular, **P.S. 235 Janice Marie Knight School** & **J.H.S. 118 William W.
 - I was only able to use one year of admissions and test data. It would have been interesting to determine if there're any trends in the data across more than one year of data.
 
 - The data only contained the performance on tests that are administered to students during a typical school year. 
-  - It would be interesting to see how preparatory tests for the SHSAT relate to the number of offers recevied by schools/students. 
+  - It would be interesting to see how preparatory tests for the SHSAT relate to the number of offers received by schools/students. 
   - Also, looking at any after-school prep programs' impact on the number of offers received, would be interesting.
 
 ## Project File Structure/Organization ##
