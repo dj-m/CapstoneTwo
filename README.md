@@ -159,7 +159,7 @@ Each of the Regressors is used to used to make the first **25** predictions.
 
 Given the R<sup>2</sup> scores are so close, I'll lean towards simplicity rather than running several base regressors and an ensemble to gain just a **3%** gain in explained behavior/R<sup>2</sup> by choosing to do a **linear regression** going forward.
 
-## Predictions ##
+## Predictions & Recommendations ##
 
 There's a strong correlation between the percent of test takers in a school and the number of offers that that high school received.
 
@@ -170,7 +170,7 @@ One approach to achieving more admissions offers is to send more students to tak
 
 The model is based on 530 schools (536 schools with at least 6 SHSAT takers, as SHSAT is unknown for category 0-5 takers. For 6 out of those 536 schools the AvgMark is 0 as a result.
 
-**Top 25 schools that can send more students to the take the test**
+**Recommendation #1: Top 25 schools that can send more students to the take the test**
 
 Below, are the predictions by school regarding the percent of students that could have taken the SHSAT (PerModelDidSHSAT). The PotentialTakers takes the difference between the PerModelDidSHSAT and PerDidSHSAT (ModAgainstDidSHSAT) multiplied by the total number of 8th grade students in each school (count\_of_students_hs_admissions).
 
@@ -186,7 +186,7 @@ All possible performance related predictors (mark and level4) are very strongly 
 | ![Linear Regressino of High Performing Test Takers](images/readme/linear_reg_high_performing_students.png) |
 | :-: |
 
-**Top 25 schools that can increase the percent of their students receiving offers**
+**Recommendation #2: Top 25 schools that can increase the percent of their students receiving offers**
 
 Here I'm making predictions by school regarding the percent of offers per student according to the model (mod_offers). Real offers (RealOffers) looks at the modeled percent offers (PctModelOffers) multiplied by the number of SHSAT takers. PotentialOffers takes the difference of RealOffers from actual offers (NumSpecializedOffers).
 
